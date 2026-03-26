@@ -14,6 +14,9 @@ const PRODUCTS = [
 function ProductCard({ product }) {
   const handleAddToCart = () => {
     // TODO: emettre un evenement pour ajouter ce produit au panier
+    const data = { id: product.id, name: product.name, price: product.price };
+    console.log('[EventBus] cart:add', data);
+    eventBus.emit('cart:add', data);
   };
 
   return (
